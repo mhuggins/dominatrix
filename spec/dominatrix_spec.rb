@@ -2,9 +2,7 @@
 require 'spec_helper'
 
 RSpec.describe Dominatrix do
-  subject { described_class }
-
-  describe '.parse' do
+  describe '#parse' do
     shared_examples_for 'a valid URL' do |domain|
       it 'returns the domain when given a string' do
         expect(subject.parse(url)).to eq domain
@@ -48,24 +46,49 @@ RSpec.describe Dominatrix do
     end
 
     describe 'when given a custom list of extensions' do
+      subject { described_class.new(extensions) }
+
       let(:extensions) { %w[.uk .co.uk].to_set }
 
       it 'returns the domain for a valid URI' do
-        expect(subject.parse('http://www.example.co.uk', extensions)).to eq 'example.co.uk'
+        expect(subject.parse('http://www.example.co.uk')).to eq 'example.co.uk'
       end
 
       it 'raises an error for an invalid URI' do
-        expect { subject.parse('http://www.example.com', extensions) }.to raise_error Dominatrix::NotFoundError
+        expect { subject.parse('http://www.example.com') }.to raise_error Dominatrix::NotFoundError
       end
     end
   end
 
+  describe '.parse' do
+    subject { described_class }
+
+    let(:url) { 'http://www.google.com' }
+
+    it 'delegates to a new instance' do
+      instance = subject.new
+      allow(subject).to receive(:new).and_return(instance)
+      expect(instance).to receive(:parse).with(url)
+      subject.parse(url)
+    end
+
+    it 'includes the provided extension list' do
+      extensions = %w[.uk .co.uk].to_set
+      instance = subject.new(extensions)
+      allow(subject).to receive(:new).with(extensions).and_return(instance)
+      expect(instance).to receive(:parse).with(url)
+      subject.parse(url, extensions)
+    end
+  end
+
   describe '.default_extensions' do
+    subject { described_class }
+
     it 'returns a set' do
       expect(subject.default_extensions).to be_a Set
     end
 
-    it 'prefixes each extension with a dot', skip: 'RTL extensions not working' do
+    it 'prefixes each extension with a dot' do
       expect(subject.default_extensions).to all start_with('.')
     end
   end

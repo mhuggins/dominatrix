@@ -1,4 +1,4 @@
- .ac
+.ac
 .com.ac
 .gov.ac
 .mil.ac
@@ -9,7 +9,7 @@
 .ad
 .nom.ad
 .ae
-امارات.
+.امارات
 .co.ae
 .net.ae
 .org.ae
@@ -550,7 +550,7 @@
 .web.do
 .domains
 .dz
-الجزائر.
+.الجزائر
 .com.dz
 .art.dz
 .asso.dz
@@ -582,7 +582,7 @@
 .org.ee
 .pri.ee
 .eg
-مصر.
+.مصر
 .com.eg
 .edu.eg
 .eun.eg
@@ -868,7 +868,7 @@
 .in
 .ભારત
 .भारत
-بھارت.
+.بھارت
 .ਭਾਰਤ
 .இந்தியா
 .co.in
@@ -905,7 +905,7 @@
 .org.iq
 .tv.iq
 .ir
-ایران.
+.ایران
 .ac.ir
 .co.ir
 .id.ir
@@ -930,7 +930,7 @@
 .jm
 .com.jm
 .jo
-الاردن.
+.الاردن
 .com.jo
 .edu.jo
 .gov.jo
@@ -1140,7 +1140,7 @@
 .sch.ly
 .mex.com
 .ma
-المغرب.
+.المغرب
 .co.ma
 .net.ma
 .org.ma
@@ -1268,7 +1268,7 @@
 .edu.mx
 .gob.mx
 .my
-مليسيا.
+.مليسيا
 .com.my
 .net.my
 .org.my
@@ -1377,7 +1377,7 @@
 .health.nz
 .parliament.nz
 .om
-عمان.
+.عمان
 .co.om
 .com.om
 .ac.om
@@ -1438,7 +1438,7 @@
 .pictures
 .pink
 .pk
-پاکستان.
+.پاکستان
 .com.pk
 .net.pk
 .org.pk
@@ -1665,7 +1665,7 @@
 .productions
 .properties
 .ps
-فلسطين.
+.فلسطين
 .com.ps
 .net.ps
 .org.ps
@@ -1697,7 +1697,7 @@
 .org.py
 .qc.com
 .qa
-قطر.
+.قطر
 .com.qa
 .net.qa
 .org.qa
@@ -1781,7 +1781,7 @@
 .org.sa
 .pub.sa
 .sch.sa
-السعودية.
+.السعودية
 .com.sb
 .net.sb
 .org.sb
@@ -1911,7 +1911,7 @@
 .red.sv
 .sx
 .sy
-سوريا.
+.سوريا
 .systems
 .co.sz
 .sz
@@ -1965,7 +1965,7 @@
 .org.tl
 .tm
 .tn
-تونس.
+.تونس
 .com.tn
 .net.tn
 .org.tn
@@ -2227,7 +2227,7 @@
 .xxx
 .xyz
 .ye
-اليمن.
+.اليمن
 .co.ye
 .com.ye
 .gov.ye

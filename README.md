@@ -22,8 +22,12 @@ Or install it yourself as:
 
 ### Parsing Domains
 
-To parse a domain name from a URI, call the `Dominatrix.parse` method with a
-URI object or parseable URI string.
+There are two approaches to parsing domains with Dominatrix: `Dominatrix.parse`
+and `Dominatrix#parse`.
+
+#### Dominatrix.parse
+
+Call the `Dominatrix.parse` method with a URI object or parseable URI string.
 
 ```ruby
 Dominatrix.parse('http://www.google.com')
@@ -61,6 +65,30 @@ following errors will be raised:
 * `URI::InvalidURIError`: the URI was passed in as a `String` and cannot be
   parsed.
 * `Dominatrix::NotFoundError`: the URI does not contain a valid domain name.
+
+#### Dominatrix#parse
+
+Instantiate a `Dominatrix` object by passing in an optional set of valid domain
+extensions.  By default, this value is set to `Dominatrix.default_extensions`.
+
+```ruby
+dominatrix = Dominatrix.new
+# => #<Dominatrix:0x007fda8428a8f0 @extensions=#<Set: {".ac", ".com.ac", ".gov.ac", ".mil.ac", ... }>>
+
+dominatrix = Dominatrix.new(%w[.com .net].to_set)
+# => #<Dominatrix:0x007fda823861c0 @extensions=#<Set: {".com", ".net"}>>
+```
+
+Once instantiated, call the `#parse` method with a URI object or parseable URI
+string.
+
+```ruby
+dominatrix.parse('http://www.google.com')
+# => "google.com"
+
+dominatrix.parse('http://www.google.foo')
+# => Dominatrix::NotFoundError: no matching domain for "http://www.google.foo"
+```
 
 ### Domain Extensions
 
