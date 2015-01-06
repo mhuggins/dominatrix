@@ -8,6 +8,7 @@ class Dominatrix
   attr_reader :extensions
 
   def initialize(extensions = self.class.default_extensions)
+    warn '[DEPRECATION] Dominatrix has been renamed to Domainator and will no longer be supported. Please switch to Domainator as soon as possible.'
     self.extensions = extensions
   end
 

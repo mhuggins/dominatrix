@@ -21,4 +21,10 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.6'
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
+
+  spec.post_install_message = <<-MESSAGE
+  !    The 'dominatrix' gem has been deprecated and has been replaced by 'domainator'.
+  !    See: https://rubygems.org/gems/domainator
+  !    And: https://github.com/mhuggins/domainator
+  MESSAGE
 end
